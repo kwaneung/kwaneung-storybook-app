@@ -9,7 +9,8 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-links",
     "@chromatic-com/storybook",
-    "@storybook/addon-docs"
+    "@storybook/addon-docs",
+    "@storybook/addon-themes",
   ],
 
   framework: {
@@ -21,6 +22,6 @@ const config: StorybookConfig = {
     },
   },
 
-  staticDirs: ["../public"]
+  staticDirs: ["../public"],
 };
 export default config;
