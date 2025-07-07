@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
+import { useFontSize } from "@/lib/font-size-context";
 import {
   Sun,
   Moon,
@@ -13,11 +14,13 @@ import {
   ChevronRightIcon,
   GitBranchIcon,
   Loader2Icon,
+  Type,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function TestButtonsPage() {
   const { theme, setTheme } = useTheme();
+  const { fontSize, setFontSize } = useFontSize();
   const [mounted, setMounted] = useState(false);
 
   // 하이드레이션 이슈 방지
@@ -63,38 +66,77 @@ export default function TestButtonsPage() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold">Button 테스트</h1>
-            <p className="text-muted-foreground">
-              현재 테마: <span className="font-semibold">{theme}</span>
-            </p>
+            <div className="text-muted-foreground space-y-1">
+              <p>
+                현재 테마: <span className="font-semibold">{theme}</span>
+              </p>
+              <p>
+                폰트 크기: <span className="font-semibold">{fontSize}</span>
+              </p>
+            </div>
           </div>
           <div className="flex gap-2">
-            <Button
-              onClick={() => setTheme("light")}
-              variant={theme === "light" ? "default" : "outline"}
-              size="sm"
-              className="gap-2"
-            >
-              <Sun className="h-4 w-4" />
-              Light
-            </Button>
-            <Button
-              onClick={() => setTheme("dark")}
-              variant={theme === "dark" ? "default" : "outline"}
-              size="sm"
-              className="gap-2"
-            >
-              <Moon className="h-4 w-4" />
-              Dark
-            </Button>
-            <Button
-              onClick={() => setTheme("system")}
-              variant={theme === "system" ? "default" : "outline"}
-              size="sm"
-              className="gap-2"
-            >
-              <Monitor className="h-4 w-4" />
-              System
-            </Button>
+            {/* 테마 토글 버튼 */}
+            <div className="flex gap-1">
+              <Button
+                onClick={() => setTheme("light")}
+                variant={theme === "light" ? "default" : "outline"}
+                size="sm"
+                className="gap-2"
+              >
+                <Sun className="h-4 w-4" />
+                Light
+              </Button>
+              <Button
+                onClick={() => setTheme("dark")}
+                variant={theme === "dark" ? "default" : "outline"}
+                size="sm"
+                className="gap-2"
+              >
+                <Moon className="h-4 w-4" />
+                Dark
+              </Button>
+              <Button
+                onClick={() => setTheme("system")}
+                variant={theme === "system" ? "default" : "outline"}
+                size="sm"
+                className="gap-2"
+              >
+                <Monitor className="h-4 w-4" />
+                System
+              </Button>
+            </div>
+
+            {/* 폰트 크기 토글 버튼 */}
+            <div className="flex gap-1 ml-2">
+              <Button
+                onClick={() => setFontSize("normal")}
+                variant={fontSize === "normal" ? "default" : "outline"}
+                size="sm"
+                className="gap-2"
+              >
+                <Type className="h-4 w-4" />
+                보통
+              </Button>
+              <Button
+                onClick={() => setFontSize("large")}
+                variant={fontSize === "large" ? "default" : "outline"}
+                size="sm"
+                className="gap-2"
+              >
+                <Type className="h-4 w-4" />
+                큰글씨
+              </Button>
+              <Button
+                onClick={() => setFontSize("extra-large")}
+                variant={fontSize === "extra-large" ? "default" : "outline"}
+                size="sm"
+                className="gap-2"
+              >
+                <Type className="h-4 w-4" />
+                매우큰글씨
+              </Button>
+            </div>
           </div>
         </div>
 

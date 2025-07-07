@@ -110,6 +110,19 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* 폰트 크기 스케일 - HTML 기본 font-size 조절 */
+html[data-font-size="normal"] {
+  font-size: 100%; /* 기본 크기 (브라우저 기본값 기준) */
+}
+
+html[data-font-size="large"] {
+  font-size: 125%; /* 125% 크기 */
+}
+
+html[data-font-size="extra-large"] {
+  font-size: 150%; /* 150% 크기 */
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
