@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -40,6 +41,13 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
+        <Link href="/test-buttons" className={styles.card}>
+          <h2>
+            Button Test <span>-&gt;</span>
+          </h2>
+          <p>Light/Dark 모드와 다양한 사이즈의 버튼들을 테스트해보세요.</p>
+        </Link>
+
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
