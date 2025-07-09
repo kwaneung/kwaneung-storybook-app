@@ -1,0 +1,72 @@
+# Next.js 관련 파일들
+.next/
+next.config.mjs
+next-env.d.ts
+public/
+vercel.json
+
+# 앱 관련 파일들
+app/
+pages/
+styles/
+stories/
+
+# 스토리북 관련 파일들
+.storybook/
+storybook-static/
+
+# 개발 도구 설정
+.vscode/
+.idea/
+.git/
+.gitignore
+
+# Node.js 관련
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# 빌드 관련
+.turbo/
+.cache/
+
+# 테스트 관련
+coverage/
+.nyc_output/
+*.test.js
+*.test.ts
+*.test.tsx
+*.spec.js
+*.spec.ts
+*.spec.tsx
+
+# 로그 파일
+*.log
+logs/
+
+# OS 관련
+.DS_Store
+Thumbs.db
+
+# 임시 파일
+*.tmp
+*.temp
+
+# 문서 관련 (README.md는 포함되어야 함)
+docs/
+*.md
+!README.md
+
+# 설정 파일들
+.env*
+.eslintrc*
+.prettierrc*
+postcss.config.mjs
+tailwind.config.js
+tailwind.config.ts
+tsup.config.ts
+tsconfig.json
+
+# 소스 맵 (필요에 따라)
+*.map 
