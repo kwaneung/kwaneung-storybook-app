@@ -1,6 +1,6 @@
 {
   "name": "@kwaneung/design-system",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "React UI component library with accessibility-focused font size controls",
   "private": false,
   "main": "./dist/index.js",
@@ -12,7 +12,7 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./styles": "./dist/index.css",
+    "./styles": "./app/globals.css",
     "./package.json": "./package.json"
   },
   "files": [
@@ -20,7 +20,8 @@
     "components",
     "lib",
     "index.ts",
-    "README.md"
+    "README.md",
+    "app/globals.css"
   ],
   "scripts": {
     "dev": "next dev",
